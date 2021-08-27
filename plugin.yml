@@ -1,0 +1,16 @@
+name: ReportUI
+main: NZS\RP\Reporter
+api:
+ - 3.0.0
+ - 3.2.0
+version: 8.0
+depends: FormAPI
+description: "Reporter"
+commands:
+ report:
+  description: "Tố cáo và báo lỗi"
+  allias: /rp
+  permission: tocao.cmd
+permissions:
+ tocao.cmd:
+  default: op
