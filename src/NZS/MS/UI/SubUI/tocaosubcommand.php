@@ -27,13 +27,13 @@ class tocaosubcommand
     {
         $a = Server::getInstance()->getPluginManager()->getPlugin("FormAPI");
         $f = $a->createCustomForm(Function (Player $player, $d){
-            if(!isset($d[0]) || !isset($d[1]) || !isset($d[2])){
+            if(count($d) < 3){
                 $player->sendMessage($this->getPlugin()->rp . "§l§c Điền đầy đủ thông tin!");
                 return;
             }
             $id = mt_rand(1, mt_getrandmax());
             $name = $player->getName();
-            $tc = $this->getPlugin()->tc->get($player->getName())["ID"];
+            $tc = $this->getPlugin()->tc->get(strtolower($player->getName()))["ID"];
 
             $this->getPlugin()->tc->set($player->getName(), ["ID" => $id, "Accused" => $d[0], "Reason" => $d[1], "promise" => $d[2]]);
             $this->getPlugin()->tc->save();

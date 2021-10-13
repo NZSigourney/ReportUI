@@ -55,7 +55,7 @@ class tocaoUI
 
         $f->setTitle($this->getPlugin()->rp);
         $f->setContent("§l§b•§a Cấp Độ hiện tại: §c".$this->getPlugin()->seeLevel($name)."\n§l•§a Exp: §c".$this->getPlugin()->seeExp($name)."§f/§a".$max."\n§l§b•§a Số Lần tố cáo: §c".$this->getPlugin()->seeNB($name));
-        $f->addButton("EXIT", 0)
+        $f->addButton("EXIT", 0);
         $f->addButton("§l§c• §aTố cáo §c•", 1);
         $f->addButton("§l§c• §eHủy §cTố Cáo •", 2);
         $f->addButton("§l§c• §aHướng Dẫn§c •", 3);

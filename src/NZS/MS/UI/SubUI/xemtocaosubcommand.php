@@ -23,9 +23,13 @@ class xemtocaosubcommand
         return null;
     }
 
-    public function xemtocaosubcommand($player): bool
+    public function getReport($player){
+        return $this->getPlugin()->tc->getAll(true);
+    }
+
+    public function xemtocaosubcommand($player)
     {
-        $xtc = $this->getPlugin()->tc->get($player->getName());
+        $xtc = $this->getPlugin()->tc->get(strtolower($player->getName()));
         $id = $xtc["ID"];
         $suspect = $xtc["Accused"];
         $reason = $xtc["Reason"];
